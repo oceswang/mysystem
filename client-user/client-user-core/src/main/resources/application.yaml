@@ -1,0 +1,43 @@
+server:
+  context-path: /user
+  port: 8101
+  tomcat:
+    access_log_enabled: true
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource  
+    url: jdbc:mysql://10.9.21.51:3306/user_service?characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    minIdle: 1  
+    maxActive: 10  
+    initialSize: 1  
+    timeBetweenEvictionRunsMillis: 3000  
+    minEvictableIdleTimeMillis: 300000  
+    validationQuery: SELECT 1 
+    testWhileIdle: true  
+    testOnBorrow: false  
+    testOnReturn: false 
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: none
+          
+          
+rmq:
+  addresses: 10.9.21.51:5672
+  virtualHost: test
+  username: test
+  password: test
+  group: user-service
+  
+swagger:
+  basePackage: com.galaxyinternet.user.core.web
+  title: 用户管理 RESTful API
+  desc: 用户管理 RESTFUL API
+  serviceUrl: http://www.galaxyinternet.com
+  version: 1.0

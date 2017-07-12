@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- configuration file for LogBack (slf4J implementation)
+See here for more details: http://gordondickens.com/wordpress/2013/03/27/sawing-through-the-java-loggers/ -->
+<configuration scan="true" scanPeriod="30 seconds">
+
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contextListener>
+
+    <jmxConfigurator/>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/user.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/user-%d{yyyy-MM-dd}.gz</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss} ${PID}: %-5level %logger{0} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss} ${PID}: %-5level %logger{0} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Specify logging levels -->
+    <logger name="org.springframework" level="info"/>
+ 	<logger name="org.hibernate" level="info"/>
+    <logger name="com.galaxyinternet" level="debug"/>
+
+    <!--<logger name="org.springframework.transaction" level="debug" />-->
+    <!--<logger name="org.springframework.jdbc.datasource" level="debug" />-->
+    <!--<logger name="org.springframework.orm.jpa" level="debug" />-->
+
+         
+    <root level="info">
+    	<appender-ref ref="FILE"/>
+        <appender-ref ref="console"/>
+    </root>
+</configuration>
