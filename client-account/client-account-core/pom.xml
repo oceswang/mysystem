@@ -4,7 +4,7 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.galaxyinternet</groupId>
+		<groupId>com.github</groupId>
 		<artifactId>client-account</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
@@ -16,18 +16,18 @@
 	</properties>
 	<dependencies>
 		<dependency>
-			<groupId>com.galaxyinternet</groupId>
+			<groupId>com.github</groupId>
 			<artifactId>client-account-api</artifactId>
 			<version>${project.version}</version>
 			<exclusions>
 				<exclusion>
-					<groupId>com.galaxyinternet</groupId>
+					<groupId>com.github</groupId>
 					<artifactId>base-event</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>com.galaxyinternet</groupId>
+			<groupId>com.github</groupId>
 			<artifactId>client-user-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>

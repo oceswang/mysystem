@@ -36,8 +36,8 @@ rmq:
   group: user-service
   
 swagger:
-  basePackage: com.galaxyinternet.user.core.web
+  basePackage: com.github.user.core.web
   title: 用户管理 RESTful API
   desc: 用户管理 RESTFUL API
-  serviceUrl: http://www.galaxyinternet.com
+  serviceUrl: http://www.github.com
   version: 1.0

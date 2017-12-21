@@ -29,7 +29,7 @@ See here for more details: http://gordondickens.com/wordpress/2013/03/27/sawing-
     <!-- Specify logging levels -->
     <logger name="org.springframework" level="info"/>
  	<logger name="org.hibernate" level="info"/>
-    <logger name="com.galaxyinternet" level="debug"/>
+    <logger name="com.github" level="debug"/>
 
     <!--<logger name="org.springframework.transaction" level="debug" />-->
     <!--<logger name="org.springframework.jdbc.datasource" level="debug" />-->

@@ -13,7 +13,7 @@
 	</properties>
 
 	<parent>
-		<groupId>com.galaxyinternet</groupId>
+		<groupId>com.github</groupId>
 		<artifactId>base-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
