@@ -22,8 +22,7 @@ public class AccountCreatedEvent extends BaseEvent
 	@Override
 	public EventType getEventType()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return EVENT_TYPE;
 	}
 
 }
