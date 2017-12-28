@@ -53,21 +53,21 @@ public class EventConfiguration
 	}
 
 	@Bean
-	public ProducerEndpoint producerEndpoint()
+	public ProducerEndpoint producerEndpoint(EventTypeRegistry eventRegistry, ConnectionFactory connectionFactory)
 	{
-		return new ProducerEndpoint(eventRegistry(), connectionFactory(), group);
+		return new ProducerEndpoint(eventRegistry, connectionFactory, group);
 	}
 	
 	@Bean
-	public ConsumerEndpoint cunsumerEndpoint()
+	public ConsumerEndpoint cunsumerEndpoint(EventTypeRegistry eventRegistry, ConnectionFactory connectionFactory)
 	{
-		return new ConsumerEndpoint(eventRegistry(), connectionFactory(), group); 
+		return new ConsumerEndpoint(eventRegistry, connectionFactory, group); 
 	}
 	
 	@Bean
-	public RabbitTemplate rabbitTemplate()
+	public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory)
 	{
-		return new RabbitTemplate(connectionFactory());
+		return new RabbitTemplate(connectionFactory);
 	}
 	
 	@Bean

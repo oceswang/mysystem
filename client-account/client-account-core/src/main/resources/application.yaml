@@ -8,7 +8,7 @@ server:
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource  
-    url: jdbc:mysql://10.9.21.51:3306/account_service?characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://mysql:3306/account_service?characterEncoding=utf8&useSSL=false
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
@@ -30,7 +30,7 @@ spring:
           
           
 rmq:
-  addresses: 10.9.21.51:5672
+  addresses: rabbitmq:5672
   virtualHost: test
   username: test
   password: test
